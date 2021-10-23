@@ -1,0 +1,64 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@500&display=swap');
+:root {
+	--primary-font: 'Josefin Sans', sans-serif;
+	--secondary-font: 'Playfair Display', serif;
+	--background-color: hsl(360, 6%, 90%);
+}
+
+body {
+	background: var(--background-color);
+	font-family: var(--primary-font);
+	font-size: 1.0rem;
+}
+main {
+	margin: 0 auto;
+	padding: 2.0rem;
+	width: clamp(90%, 80vw, 100.0rem);
+}
+header, article {
+	border-bottom: 0.2rem solid black;
+}
+header {
+	margin-bottom: 2.6rem;
+}
+h1 {
+	font-size: 2.618rem;
+	margin: 0 0 0.5rem;
+}
+.subtitle {
+	font-size: 1.618rem;
+	margin: 0 0 1.6rem;
+	text-indent: 2.8rem;
+}
+article {
+	line-height: 1.6;
+	padding-bottom: 2.6rem;
+}
+.client-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+		&::after {
+			content: ',';
+		}
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+.screenshots {
+	display: grid; 
+	grid-gap: 2.0rem;
+	grid-template-columns: repeat(4, 1fr); 
+	img {
+		width: 100%;
+	}
+}
