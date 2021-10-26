@@ -10,12 +10,17 @@ body {
   background: var(--background-color);
   font-family: var(--primary-font);
   font-size: 1.0rem;
+  overscroll-behavior: none;
 }
 
 main {
   margin: 0 auto;
   padding: 2.0rem;
-  width: clamp(90%, 80vw, 100rem);
+  width: clamp(85%, 80vw, 100rem);
+}
+
+a {
+  color: #3c9c9b;
 }
 
 header, article {
@@ -63,15 +68,50 @@ article {
   display: none;
 }
 
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.618rem;
+}
+
 .screenshots {
   display: -ms-grid;
   display: grid;
   grid-gap: 2.0rem;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (22rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 22rem);
+}
+
+@media screen and (max-width: 40rem) {
+  .screenshots {
+    -ms-grid-columns: (100%)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 100%);
+  }
 }
 
 .screenshots img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
+}
+
+.ss {
+  border: 0.5rem solid #4e6e60;
+  border-radius: 1.0rem;
+}
+
+.cfa .ss {
+  border-color: #dd0031;
+}
+
+.drh .ss {
+  border-color: #28445a;
+}
+
+.pnf .ss {
+  border-color: #10a4d7;
 }
 /*# sourceMappingURL=main.css.map */

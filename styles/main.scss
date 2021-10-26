@@ -5,16 +5,19 @@
 	--secondary-font: 'Playfair Display', serif;
 	--background-color: hsl(360, 6%, 90%);
 }
-
 body {
 	background: var(--background-color);
 	font-family: var(--primary-font);
 	font-size: 1.0rem;
+	overscroll-behavior: none;
 }
 main {
 	margin: 0 auto;
 	padding: 2.0rem;
-	width: clamp(90%, 80vw, 100.0rem);
+	width: clamp(85%, 80vw, 100.0rem);
+}
+a {
+	color: #3c9c9b;
 }
 header, article {
 	border-bottom: 0.2rem solid black;
@@ -54,11 +57,35 @@ article {
 		}
 	}
 }
+h2 {
+	font-size: 2.2rem;
+}
+h3 {
+	font-size: 1.618rem;
+}
 .screenshots {
 	display: grid; 
 	grid-gap: 2.0rem;
-	grid-template-columns: repeat(4, 1fr); 
+	grid-template-columns: repeat(auto-fill, 22.0rem); 
+	@media screen and (max-width: 40.0rem) {
+		grid-template-columns: repeat(auto-fill, 100%); 
+	}
 	img {
+		height: 100%;
+		object-fit: cover;
 		width: 100%;
+	}
+}
+.ss {
+	border: 0.5rem solid #4e6e60;
+	border-radius: 1.0rem;
+	.cfa & {
+		border-color: #dd0031;
+	}
+	.drh & {
+		border-color: #28445a;
+	}
+	.pnf & {
+		border-color: #10a4d7;
 	}
 }
