@@ -47,6 +47,14 @@ article {
 		margin: 0;
 		padding: 0;
 		white-space: nowrap;
+		@media screen and (max-width: 42.5rem) {
+			display: block;
+			margin: 0 0 1.0rem;
+			white-space: normal;
+			&::after {
+				display: none;
+			}
+		}
 		&::after {
 			content: ',';
 		}
